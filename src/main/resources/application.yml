@@ -1,0 +1,11 @@
+spring:
+  port: 8081
+  main:
+    banner-mode: console
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+
+music:
+  folder: ${MUSIC_FOLDER:C:/Users/tiwar/Music/Audio}
