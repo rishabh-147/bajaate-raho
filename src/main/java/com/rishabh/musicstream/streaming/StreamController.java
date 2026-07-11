@@ -1,5 +1,6 @@
 package com.rishabh.musicstream.streaming;
 
+import com.rishabh.musicstream.catalog.SongMetadata;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -7,31 +8,17 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
 @Slf4j
-@CrossOrigin("localhost:3000/")
 @RequestMapping("/v1")
 public class StreamController {
     @Autowired
     private StreamingService service;
 
-    @GetMapping("/")
-    public ResponseEntity<InputStreamResource> streamRandomSong(
-            @RequestHeader HttpHeaders headers) {
-
-        int id = ThreadLocalRandom.current().nextInt(1, service.getSongs().size());
-        long totalFileLengthInBytes = service.getSongLength(id);
-        SongResource resource = null;
-        if(!headers.getRange().isEmpty()) {
-
-            resource = service.stream(id, headers.getRange().getFirst().getRangeStart(totalFileLengthInBytes));
-        }else{
-            resource = service.stream(id, 0);
-        }
-
-        return buildResponse(resource, getRange(headers), totalFileLengthInBytes);
+    @GetMapping("/radio")
+    public ResponseEntity<?> getRandomSongData() {
+        return ResponseEntity.ok(service.getRandomSongMetaData());
     }
 
     @GetMapping("/songs/{id}")

@@ -7,5 +7,9 @@ spring:
       - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
       - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
 
+app:
+  frontend:
+    url: http://localhost:3000
+
 music:
   folder: ${MUSIC_FOLDER:C:/Users/tiwar/Music/Audio}

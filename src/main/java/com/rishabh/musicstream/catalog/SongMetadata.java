@@ -21,7 +21,7 @@ public class SongMetadata implements Serializable {
 
     private long fileSize;
 
-    private transient String mimeType;
+    private String mimeType;
 
     private transient Path filePath;
 }

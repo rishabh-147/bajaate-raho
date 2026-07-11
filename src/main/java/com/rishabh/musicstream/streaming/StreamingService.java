@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.io.*;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 @Slf4j
@@ -26,6 +27,13 @@ public class StreamingService {
     public long getSongLength(long id ){
         return catalog.getSong(id).orElseThrow(() ->
                 new RuntimeException("Song not found : " + id)).getFileSize();
+    }
+
+    public SongMetadata getRandomSongMetaData(){
+        int id = ThreadLocalRandom.current().nextInt(1, catalog.fetchAllSongs().size());
+
+        return catalog.getSong(id).orElseThrow(() -> new RuntimeException("Unable to fetch metadata for the SongId :: "+id));
+
     }
 
     public SongResource stream(long id, long start){
