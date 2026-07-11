@@ -56,4 +56,9 @@ public class CatalogActualService implements CatalogService {
             throw new RuntimeException("Exception while preparing catalog metadata");
         }
     }
+
+    @PostConstruct
+    public void init() {
+        log.info("Music Folder: {}", musicFolder);
+    }
 }
