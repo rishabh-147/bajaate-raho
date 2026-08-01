@@ -1,5 +1,5 @@
 spring:
-  port: 8081
+  port: 8080
   main:
     banner-mode: console
   autoconfigure:
@@ -9,7 +9,7 @@ spring:
 
 app:
   frontend:
-    url: http://localhost:3000
+    urls: ${FRONTEND_URLS:http://localhost:3000,https://rishabh-147.github.io}
 
 music:
   folder: ${MUSIC_FOLDER:C:/Users/tiwar/Music/Audio}
