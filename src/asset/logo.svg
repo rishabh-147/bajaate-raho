@@ -1,0 +1,104 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 256 256"
+    fill="none"
+>
+
+<defs>
+
+<style>
+
+.radio{
+    stroke:#1D9CB9;
+    fill:none;
+    stroke-width:7;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.solid{
+    fill:#1D9CB9;
+}
+
+.wave{
+    stroke:#22D3EE;
+    stroke-width:5;
+    stroke-linecap:round;
+}
+
+</style>
+
+</defs>
+
+
+<!-- Waves -->
+
+<path
+class="wave"
+d="M176 52 Q188 40 188 24"
+/>
+
+<path
+class="wave"
+d="M192 60 Q210 42 210 14"
+/>
+
+
+<!-- Antenna -->
+
+<line
+class="radio"
+x1="70"
+y1="50"
+x2="160"
+y2="15"
+/>
+
+
+<!-- Body -->
+
+<rect
+class="radio"
+x="30"
+y="60"
+width="196"
+height="150"
+rx="30"
+/>
+
+
+<!-- Grill -->
+
+<line class="radio" x1="55" y1="95" x2="118" y2="95"/>
+<line class="radio" x1="55" y1="115" x2="118" y2="115"/>
+<line class="radio" x1="55" y1="135" x2="118" y2="135"/>
+<line class="radio" x1="55" y1="155" x2="118" y2="155"/>
+
+
+<!-- Equalizer -->
+
+<rect class="solid" x="70" y="173" width="6" height="18" rx="3"/>
+<rect class="solid" x="84" y="166" width="6" height="25" rx="3"/>
+<rect class="solid" x="98" y="154" width="6" height="37" rx="3"/>
+<rect class="solid" x="112" y="168" width="6" height="23" rx="3"/>
+
+
+<!-- Speaker -->
+
+<circle
+class="radio"
+cx="175"
+cy="135"
+r="38"
+/>
+
+
+<circle
+class="solid"
+cx="175"
+cy="135"
+r="10"
+/>
+
+
+</svg>
